@@ -1,14 +1,8 @@
 # Проверка, что в файле есть ссылки
-def check_refs(data: dict) -> bool:
-    if data.get('refs'):
-        return True
-    else:
-        return False
+def check_refs(data: dict[str, str]) -> bool:
+    return 'refs' in data
 
 
 # Проверка, что в файле есть регистрационные данные
-def check_reg(data: dict) -> bool:
-    if data.get('email') and data.get('password'):
-        return True
-    else:
-        return False
+def check_reg(data: dict[str, str]) -> bool:
+    return 'email' in data and 'password' in data

@@ -3,16 +3,16 @@ from checkers import check_reg, check_refs
 from configurations import read, write, register
 
 
-def main():
+def main() -> None:
     data = read()
-    if not (check_reg(data)):
+    if not check_reg(data):
         register()
         main()
 
     browser = driver()
     dl_register(browser, data)
 
-    if not (check_refs(data)):
+    if not check_refs(data):
         write(parser(browser))
         browser.close()
         main()

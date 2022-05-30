@@ -9,7 +9,7 @@ from selenium.common.exceptions import NoSuchElementException
 from constants import *
 
 
-def driver():
+def driver() -> webdriver.Chrome:
     # Для option есть два параметра
     # hide_option() - без показа браузера скрапинг
     # view_option() - для отладки с показом на экран
@@ -39,7 +39,7 @@ def dl_register(browser: webdriver.Chrome, data: dict) -> None:
 
 
 # Парсинг доступных у вас курсов и записывание их в json
-def parser(browser: webdriver.Chrome) -> dict:
+def parser(browser: webdriver.Chrome) -> dict[str, str]:
     page = WebDriverWait(browser, 5).until(
         EC.presence_of_element_located((By.XPATH, "//div[contains(@id,'page-container')]"))
     )

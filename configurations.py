@@ -30,7 +30,7 @@ def read() -> dict:
 
 
 # Считывание вашего логина и пароля
-def register():
+def register() -> None:
     email = input("Enter e-mail: ")
     write({'email': email})
     password = input("Enter password: ")
